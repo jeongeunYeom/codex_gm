@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>벌레숲 마을 산책</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script defer src="src/main.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <div class="runtime-warning">이 게임은 JavaScript가 켜져 있어야 실행됩니다. 브라우저 설정에서 JavaScript를 허용해 주세요.</div>
+    </noscript>
+    <main class="shell" aria-label="픽셀 아트 벌레 잡기 게임">
+      <div class="cloud cloud-one" aria-hidden="true"></div>
+      <div class="cloud cloud-two" aria-hidden="true"></div>
+      <section class="hero">
+        <p class="eyebrow">Pixel Bug Village</p>
+        <h1>벌레숲 마을 산책</h1>
+        <p>방향키나 WASD로 마을을 돌아다니며 주민들과 이야기하고, 풀숲에서 튀어나오는 야생 벌레를 잡아 보세요.</p>
+      </section>
+
+      <section class="game-card">
+        <div class="arcade">
+          <div class="screen-title">
+            <span>벌레숲 필드</span>
+            <span class="live-light">LIVE</span>
+          </div>
+          <div class="screen-wrap">
+            <canvas id="game" width="768" height="512" aria-label="픽셀 아트 마을 게임 화면">게임 화면을 보려면 canvas를 지원하는 브라우저가 필요합니다.</canvas>
+            <div class="scanline" aria-hidden="true"></div>
+            <div id="loading-help" class="loading-help">
+              <strong>게임 로직 로딩 중...</strong>
+              <span>이 문구가 계속 보이면 GitHub의 Files 화면이 아니라 배포된 페이지나 로컬 서버 주소로 열어 주세요.</span>
+            </div>
+            <div id="message" class="message" role="status">마을 광장에 도착했어요. 풀숲 근처에서 스페이스를 눌러 벌레를 잡아 보세요!</div>
+          </div>
+          <div class="controller-strip" aria-label="게임 패드 장식">
+            <span class="dpad" aria-hidden="true"></span>
+            <span class="coin-slot">PRESS SPACE</span>
+            <span class="button red" aria-hidden="true"></span>
+            <span class="button yellow" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="게임 정보">
+          <div class="panel-badge">QUEST LOG</div>
+          <div>
+            <h2>🎮 조작법</h2>
+            <ul>
+              <li><kbd>WASD</kbd> / <kbd>방향키</kbd>: 이동</li>
+              <li><kbd>Space</kbd>: 대화 / 벌레 잡기</li>
+              <li><kbd>R</kbd>: 잡은 벌레 기록 초기화</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>🐞 잡은 벌레</h2>
+            <div id="collection" class="collection"></div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 힌트</strong>
+            <p>주민 가까이에서 Space를 누르면 이야기를 들을 수 있고, 흔들리는 풀숲 가까이에서는 벌레 잡기를 시도합니다.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>
